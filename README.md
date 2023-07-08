@@ -22,11 +22,6 @@ A aplicação deve ficar ouvindo a placa, enquanto replica na tela os valores li
 
 Um botão deve ser adicinado de tal forma a testar a comunicação na direção Desktop > Placa.
 
-O código da aplicação foi baseado nos seguintes guias:
-
-- https://www.electronjs.org/docs/latest/tutorial/devices#web-serial-api
-- https://developer.chrome.com/articles/serial/
-
 ### Placa
 
 O firmware da placa será feito no projeto para um uC da família PIC32MM. Porém, para teste será utilizado uma Arduino Uno.
@@ -34,3 +29,9 @@ O firmware da placa será feito no projeto para um uC da família PIC32MM. Poré
 A placa deve ficar enviando dados de forma serial para o Desktop.
 
 Eventualmente dados chegarão do Desktop e a placa deve fazer algo com este dado.
+
+## Links utilizados
+
+- https://www.electronjs.org/docs/latest/tutorial/devices#web-serial-api
+- https://developer.chrome.com/articles/serial/
+- https://github.com/PaulStoffregen/SoftwareSerial/blob/master/SoftwareSerial.h

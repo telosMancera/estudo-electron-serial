@@ -42,7 +42,7 @@ void board_loop(void) {
 
 void _desktop_init(HardwareSerial *serial) {
     _desktop = serial;
-    memset(_shared_data, 0, _SHARED_NUMBER_LENGTH);
+    memset(_shared_data, 0, _SHARED_DATA_LENGTH);
     _target_millis = 0;
 }
 
@@ -56,10 +56,10 @@ void _desktop_send_data(void) {
     }
     _target_millis = now + _DESKTOP_SEND_INTERVAL_MS;
 
-    while (!_desktop.availableForWrite())
+    while (!_desktop->availableForWrite())
         ;
-    _desktop.write(_shared_data, _SHARED_DATA_LENGTH);
-    while (!_desktop.availableForWrite())
+    _desktop->write(_shared_data, _SHARED_DATA_LENGTH);
+    while (!_desktop->availableForWrite())
         ;
 
     _shared_data[_SHARED_DATA_BOARD_PART]++;
